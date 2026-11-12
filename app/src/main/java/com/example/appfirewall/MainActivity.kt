@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btnStop).setOnClickListener {
             prefs.setBlockedApps(emptySet())
             FirewallVpnService.stop(this)
-            adapter.setItems(adapter.snapshot().map { it.copy(blocked = false) })
+                        loadApps()
             Toast.makeText(this, "فایروال متوقف شد", Toast.LENGTH_SHORT).show()
         }
 
